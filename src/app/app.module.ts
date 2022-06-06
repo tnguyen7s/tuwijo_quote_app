@@ -6,6 +6,9 @@ import { QuoteLibraryComponent } from './quote-library/quote-library.component';
 import { MyQuoteComponent } from './my-quote/my-quote.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
+import { QuoteListComponent } from './my-quote/quote-list/quote-list.component';
+import { QuoteDetailComponent } from './my-quote/quote-detail/quote-detail.component';
+import { QuoteCardComponent } from './shared/quote-card/quote-card.component';
 
 
 @NgModule({
@@ -14,6 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
     QuoteLibraryComponent,
     MyQuoteComponent,
     NavbarComponent,
+    QuoteListComponent,
+    QuoteDetailComponent,
+    QuoteCardComponent,
   ],
   imports: [
     BrowserModule,
