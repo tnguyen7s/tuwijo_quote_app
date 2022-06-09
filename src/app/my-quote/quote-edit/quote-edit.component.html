@@ -1,0 +1,32 @@
+<div class="form-container">
+  <form [formGroup]="quoteForm">
+    <div class="form-group">
+      <label for="quote">Quote</label>
+      <input type="text" id="quote" name="quote" class="form-control" formControlName="quoteCtrl">
+    </div>
+
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input type="text" id="author" name="author" class="form-control" formControlName="authorCtrl">
+    </div>
+
+    <div class="form-group">
+      <label for="tag">Tag</label>
+      <input type="text" id="tag" name="tag" class="form-control" formControlName="tagCtrl">
+    </div>
+
+    <div class="form-group">
+      <label for="image-path">Image Path</label>
+      <input type="text" id="image-path" name="image-path" class="form-control" formControlName="imagePathCtrl">
+    </div>
+
+    <img class="quote-image-preview" *ngIf="quoteForm.get('imagePathCtrl').value" [src]="quoteForm.get('imagePathCtrl').value" alt="">
+
+    <div class="form-group">
+      <label for="note">Note</label>
+      <textarea id="note" name="note" class="form-control" formControlName="noteCtrl"></textarea>
+    </div>
+
+    <button class="btn btn-success" (click)="onSaveQuote()" [disabled]="!quoteForm.valid">{{isChangeMode? "Save changes":"Add"}}</button>
+  </form>
+</div>

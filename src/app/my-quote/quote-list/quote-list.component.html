@@ -1,6 +1,4 @@
 <div class="row">
-  <button class="btn btn-warning" style="background-color: #FEDE00;">New Quote</button>
-  <app-quote-card *ngFor="let quote of quotes" [quoteInput]="quote"></app-quote-card>
-
-  <h4 style="margin-top: 15px;">Please select a quote!</h4>
+  <button class="btn btn-warning" style="background-color: #FEDE00;" (click)="onNewQuote()">New Quote</button>
+  <app-quote-card *ngFor="let quote of quoteList" [quoteInput]="quote" [locatedInMyQuote]="true"></app-quote-card>
 </div>
