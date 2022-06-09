@@ -9,7 +9,8 @@
   flex-direction: row;
   align-items: center;
 
-  background-color: #53C149;
+  background-color: rgb(86, 47, 110);
+  color: azure;
   padding: 2%;
   border-radius: 20px;
 

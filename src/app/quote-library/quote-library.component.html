@@ -1,1 +1,21 @@
-<p>quote-library works!</p>
+<div class="row">
+  <div class="col-md-6">
+    <form #apiForm="ngForm" (ngSubmit)="onSearchQuotes(apiForm)">
+      <div class="form-group">
+        <label for="category">Quote Category</label>
+        <select name="category" id="category" class="form-control" ngModel="default">
+          <option disabled value="default">--Select a category</option>
+          <option value="famous">Famous</option>
+          <option value="movies">Movies</option>
+        </select>
+      </div>
+
+      <button class="btn btn-success">Search</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+

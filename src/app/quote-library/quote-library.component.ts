@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { QuoteLibraryAPIService } from './services/api-http.service';
 
 @Component({
   selector: 'app-quote-library',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuoteLibraryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private quoteLibraryAPIService: QuoteLibraryAPIService) { }
 
   ngOnInit(): void {
   }
 
+  onSearchQuotes(form: NgForm){
+    const {category} = form.value;
+
+    this.quoteLibraryAPIService.get10Quotes(category)
+                                .subscribe((responseData) => {
+                                  console.log(responseData)
+                                },
+                                (error)=>{
+                                  console.log(error)
+                                })
+  }
 }
