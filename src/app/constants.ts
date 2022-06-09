@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 @Injectable()
 export class constants {
-public readonly API_ENDPOINT: string = 'https://andruxnet-random-famous-quotes.p.rapidapi.com/?count=1';
+public readonly API_ENDPOINT: string = 'https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=famous&count=10';
 }
 import { Component, OnInit } from '@angular/core';
 import{ Constants } from './constants';
