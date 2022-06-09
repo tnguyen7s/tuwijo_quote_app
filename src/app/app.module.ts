@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { QuoteListComponent } from './my-quote/quote-list/quote-list.component';
 import { QuoteDetailComponent } from './my-quote/quote-detail/quote-detail.component';
 import { QuoteCardComponent } from './shared/quote-card/quote-card.component';
+import { HttpClientModule } from '@angular/common/http';
 import { QuoteEditComponent } from './my-quote/quote-edit/quote-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
