@@ -1,0 +1,39 @@
+.quote-image{
+  height: 40vh;
+  width: 30vw;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+blockquote{
+  background-color: rgb(241, 241, 239);
+
+  padding: 20px;
+  width: 30vw;
+  margin: 0px;
+
+  font-family: 'Patrick Hand';
+  font-size: 26px;
+
+}
+
+.quote-detail{
+  background-color: #76daff;
+  background-image: linear-gradient(315deg, #76daff 0%, #f3d230 74%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+
+  border-radius: 10px;
+}
+
+.control{
+  background-color: rgb(241, 241, 239);
+  border-radius: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

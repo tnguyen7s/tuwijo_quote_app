@@ -1,1 +1,17 @@
-<p>quote-detail works!</p>
+<h4 style="margin-top: 15px;" *ngIf="!quoteSelected">Please select a quote!</h4>
+
+<div *ngIf="quoteSelected" class="quote-detail">
+  <img [src]="quoteSelected.imagePath" alt="" class="quote-image">
+  <blockquote>💡 "{{quoteSelected.content}}"
+    <span style="display: block; padding-left: 50%;">-- By {{quoteSelected.author? quoteSelected.author : "Unknown"}}</span>
+  </blockquote>
+
+  <blockquote style="margin-bottom: 10px; padding-top: 0px;">✨ "{{quoteSelected.note}}"
+    <span style="display: block; padding-left: 50%;">-- From Me</span>
+  </blockquote>
+</div>
+
+<div *ngIf="quoteSelected" class="control">
+  <button class="btn btn-success" style="background-color: #53C149; margin: 10px;" (click)="onEditQuote()">Edit</button>
+  <button class="btn btn-danger" (click)="onDeleteQuote()">Delete</button>
+</div>

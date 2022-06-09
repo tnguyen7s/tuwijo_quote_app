@@ -1,11 +1,13 @@
-<div class="quote-card">
-  <div class="quote-content">
-    <span class="badge badge-warning" style="background-color: #002361; color: azure">{{quote["tag"]}}</span>
-    <h5 style="font-weight: 600; font-family: 'Patrick Hand', cursive;">{{quote["quote"]}}</h5>
-    <p>--{{quote["author"]}}</p>
-  </div>
+<a style="cursor: pointer" (click)="onSelectQuote()">
+  <div class="quote-card">
+    <div class="quote-content">
+      <span class="badge badge-warning" style="background-color: #002361; color: azure">{{quote.tag}}</span>
+      <h5 style="font-weight: 600; font-family: 'Patrick Hand', cursive;">{{quote.content}}</h5>
+      <p>--{{quote.author}}</p>
+    </div>
 
-  <div class="quote-image">
-    <img [src]="quote['imagePath']" alt="">
+    <div class="quote-image">
+      <img [src]="quote.imagePath" [alt]="'an image illustrates the quote: ' + quote.content">
+    </div>
   </div>
-</div>
+</a>

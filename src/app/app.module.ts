@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { QuoteListComponent } from './my-quote/quote-list/quote-list.component';
 import { QuoteDetailComponent } from './my-quote/quote-detail/quote-detail.component';
 import { QuoteCardComponent } from './shared/quote-card/quote-card.component';
+import { QuoteEditComponent } from './my-quote/quote-edit/quote-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,10 +22,13 @@ import { QuoteCardComponent } from './shared/quote-card/quote-card.component';
     QuoteListComponent,
     QuoteDetailComponent,
     QuoteCardComponent,
+    QuoteEditComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
