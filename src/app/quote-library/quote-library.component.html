@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-md-6">
-    <form #apiForm="ngForm" (ngSubmit)="onSearchQuotes(apiForm)">
+  <div class="col-md-10 form-container mx-auto">
+    <form #apiForm="ngForm" (ngSubmit)="onSearchQuotes(apiForm)" class="mb-5">
       <div class="form-group">
         <label for="category">Quote Category</label>
         <select name="category" id="category" class="form-control" ngModel="default">
@@ -10,10 +10,19 @@
         </select>
       </div>
 
-      <button class="btn btn-success">Search</button>
+      <button class="btn btn-success" style="background-color: #733381; border:#4e0f5d;">Search</button>
     </form>
 
   </div>
+
+  <div class="col-md-10 mx-auto">
+    <div *ngFor="let item of quotes; let i=index;">
+      <span style="padding-left: 5px; padding-right: 5px; border-radius: 10px; background-color: #733381; border:#4e0f5d; font-size: larger; font-weight: 700; color: azure; cursor: pointer;" (click)="onAddQuoteToList(i)">&plus;</span>
+      <app-quote-card [quoteInput]="item" [locatedInMyQuote]="false"></app-quote-card>
+      <hr>
+    </div>
+  </div>
+
 </div>
 
 
