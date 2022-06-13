@@ -27,6 +27,6 @@
       <textarea id="note" name="note" class="form-control" formControlName="noteCtrl"></textarea>
     </div>
 
-    <button class="btn btn-success" (click)="onSaveQuote()" [disabled]="!quoteForm.valid">{{isChangeMode? "Save changes":"Add"}}</button>
+    <button class="btn btn-success" (click)="onSaveQuote()" [disabled]="!quoteForm.valid" style="background-color: #733381; border:#4e0f5d">{{isChangeMode? "Save changes":"Add"}}</button>
   </form>
 </div>
