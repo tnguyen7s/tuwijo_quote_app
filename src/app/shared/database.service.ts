@@ -7,7 +7,7 @@ export class DataStorageservice {
   constructor(private http: HttpClient, private quotesService: QuoteLibraryAPIService) {}
 
   storeQuotes() {
-    const quotes = this.quotesService.get10Quotes();
+    const quotes = this.quotesService.();
     this.http.put('https://tuwijo-821a6-default-rtdb.firebaseio.com/quotes.json', quotes);
 
   }
