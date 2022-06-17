@@ -12,6 +12,9 @@
       <li class="nav-item">
         <a class="nav-link" style="color: #35342F; font-weight: 600; cursor: pointer;" routerLink="/quote-library" routerLinkActive="active">Quotes Library</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: #35342F; font-weight: 600; cursor: pointer;" routerLink="/auth" routerLinkActive="active" (click)="onLogOut()">{{isLogin? "Logout": "Login"}}</a>
+      </li>
     </ul>
 
       <a class="nav-link dropdown-toggle" style="color: #35342F; font-weight: 600; cursor: pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
