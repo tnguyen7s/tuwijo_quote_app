@@ -12,6 +12,8 @@ import { QuoteCardComponent } from './shared/quote-card/quote-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { QuoteEditComponent } from './my-quote/quote-edit/quote-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     QuoteDetailComponent,
     QuoteCardComponent,
     QuoteEditComponent,
+    AuthComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,

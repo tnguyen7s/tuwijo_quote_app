@@ -1,0 +1,23 @@
+<div class="row">
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+  <div class="col-md-5 mx-auto form-container">
+    <h4 style="margin-bottom: 20px;">Authentication</h4>
+    <form #authForm="ngForm" (ngSubmit)="onSubmitAuthForm(authForm)">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" ngModel required email #emailCtrl="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control" ngModel required #passCtrl="ngModel">
+      </div>
+
+      <button type="submit" class="btn btn-dark" [disabled]="!emailCtrl.valid || !passCtrl.valid">{{isLogin? "Login":"Sign Up"}}</button>
+      <button type="button" class="btn btn-outline-dark" (click)="onChangeAuthMode()">{{isLogin? "Switch to Sign Up": "Switch to Login"}}</button>
+    </form>
+
+    <span *ngIf="errorMsg" class="text-danger" style="margin-top: 16px; display: block;">{{errorMsg}}</span>
+  </div>
+</div>
+
