@@ -27,7 +27,7 @@ export class QuoteLibraryComponent implements OnInit {
           const author = element['author'];
           const quote = element['quote'];
 
-          this.quotes.push(new Quote(quote, author, "", "", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1280px-No_image_3x4.svg.png"));
+          this.quotes.push(new Quote(quote, author, "", "", "https://www.shell.com/energy-and-innovation/the-energy-future/scenarios/shell-scenario-sky/_jcr_content/pagePromo/image.img.960.jpeg/1548184031017/clear-blue-sky.jpeg"));
         });
       },
       (error) => {
@@ -38,6 +38,7 @@ export class QuoteLibraryComponent implements OnInit {
 
   onAddQuoteToList(index: number){
     this.myQuoteService.addQuote(this.quotes[index])
+    alert("A new quote has been added to your list.");
   }
 
 }
