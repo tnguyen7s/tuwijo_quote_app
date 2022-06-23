@@ -1,6 +1,8 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
+import { HTTPService } from '../quote-library/services/api-http.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +12,7 @@ import { AuthService } from '../auth/auth.service';
 export class NavbarComponent implements OnInit, OnDestroy {
   public isLogin = false;
   private sub: Subscription;
+  private httpService: HTTPService;
   constructor(private authService: AuthService) {
 
   }
@@ -28,4 +31,15 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+
+  onSaveData() {
+    this.httpService.saveQuotesToFirebase();
+
+  }
+
+  onFetchData() {
+    this.httpService.fetchQuotesFromFirebase();
+
+    }
+
 }

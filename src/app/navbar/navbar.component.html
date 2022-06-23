@@ -17,12 +17,12 @@
       </li>
     </ul>
 
-      <a class="nav-link dropdown-toggle" style="color: #35342F; font-weight: 600; cursor: pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Manage
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item">Fetch Data</a>
-        <a class="dropdown-item">Save Data</a>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button" style="cursor: pointer;" (click)="onSaveData()">Save Data</button>
+          <button class="dropdown-item" type="button" style="cursor: pointer;" (click)="onFetchData()">Fetch Data</button>
       </div>
   </div>
-</nav>

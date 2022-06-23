@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Subject } from "rxjs";
 import { Quote } from "../shared/models/quote.model";
+import { QuoteListComponent } from "./quote-list/quote-list.component";
 
 @Injectable({
   providedIn: "root"
@@ -65,6 +66,7 @@ export class MyQuoteService{
 
     console.log(this.quoteList)
   }
+
 
   // DELETE
   public deleteQuote(quote: Quote)
