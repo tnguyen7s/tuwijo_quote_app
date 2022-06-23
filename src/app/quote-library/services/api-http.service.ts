@@ -26,24 +26,4 @@ export class QuoteLibraryAPIService{
   }
 }
 
-export class HTTPService {
-  firebaseRootURL ="https://tuwijo-821a6-default-rtdb.firebaseio.com/quotes.json"
 
-  constructor(
-    private http: HttpClient,
-    private quoteService: MyQuoteService
-    ) {}
-
-  saveQuotesToFirebase() {
-
-    const quoteListUpdated: Quote[] = this.quoteService.getQuotes();
-    this.http.put(this.firebaseRootURL,quoteListUpdated).subscribe((res) => {});
-
-  }
-
-  fetchQuotesFromFirebase() {
-    return this.http.get(this.firebaseRootURL, {}).subscribe((res:Quote[]) =>{
-      this.quoteService.getQuotes();
-    });
-  }
-}

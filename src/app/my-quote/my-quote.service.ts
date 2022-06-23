@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Subject } from "rxjs";
 import { Quote } from "../shared/models/quote.model";
@@ -7,6 +8,8 @@ import { QuoteListComponent } from "./quote-list/quote-list.component";
   providedIn: "root"
 })
 export class MyQuoteService{
+  firebaseRootURL ="https://tuwijo-821a6-default-rtdb.firebaseio.com/quotes.json"
+
   quoteSelected: BehaviorSubject<Quote>;
   quoteListUpdated: Subject<boolean>;
   isEditMode: Subject<boolean>;
@@ -32,7 +35,7 @@ export class MyQuoteService{
     )
     ]
 
-  constructor()
+  constructor (private http: HttpClient)
   {
     this.quoteSelected = new BehaviorSubject(null);
     this.quoteListUpdated = new Subject();
@@ -79,5 +82,20 @@ export class MyQuoteService{
 
     // emit an event let relevant component know the updation of the list of quotes
     this.quoteListUpdated.next(true);
+  }
+
+  // SAVE TO FIREBASE
+  saveQuotesToFirebase() {
+
+    const quoteListUpdated: Quote[] = this.getQuotes();
+    this.http.put(this.firebaseRootURL,quoteListUpdated).subscribe((res) => {});
+  }
+
+  // fetch
+  fetchQuotesFromFirebase() {
+    return this.http.get(this.firebaseRootURL, {}).subscribe((res:Quote[]) =>{
+      this.quoteList = res.slice();
+      this.quoteListUpdated.next(true);
+    });
   }
 }

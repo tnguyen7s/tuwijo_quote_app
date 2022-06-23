@@ -1,8 +1,7 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
-import { HTTPService } from '../quote-library/services/api-http.service';
+import { MyQuoteService } from '../my-quote/my-quote.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,9 +10,9 @@ import { HTTPService } from '../quote-library/services/api-http.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   public isLogin = false;
+  public manageExpanded = false;
   private sub: Subscription;
-  private httpService: HTTPService;
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private myquoteService: MyQuoteService) {
 
   }
 
@@ -33,13 +32,20 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   onSaveData() {
-    this.httpService.saveQuotesToFirebase();
-
+    this.myquoteService.saveQuotesToFirebase();
+    this.manageExpanded = !this.manageExpanded;
+    alert('Your quotes have been saved to the database.')
   }
 
   onFetchData() {
-    this.httpService.fetchQuotesFromFirebase();
+    this.myquoteService.fetchQuotesFromFirebase();
+    this.manageExpanded = !this.manageExpanded;
+    alert('Your quotes have been fetched from the database.')
+  }
 
+  onToggleManage(){
+    if (this.authService.userAuth.value){
+      this.manageExpanded = !this.manageExpanded;
     }
-
+  }
 }

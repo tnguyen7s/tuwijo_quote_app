@@ -18,11 +18,13 @@
     </ul>
 
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
+      <button class="btn btn-secondary dropdown-toggle"style="background-color:#733381;" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="onToggleManage()">
+        Manage
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2" [ngClass]="{'show': manageExpanded}">
         <button class="dropdown-item" type="button" style="cursor: pointer;" (click)="onSaveData()">Save Data</button>
           <button class="dropdown-item" type="button" style="cursor: pointer;" (click)="onFetchData()">Fetch Data</button>
       </div>
+    </div>
   </div>
+</nav>
